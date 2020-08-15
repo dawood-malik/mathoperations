@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<math.h>
+main()
+{
+    float n[100];
+    int i,num;
+    float r;
+    printf("Enter the number of terms in array: ");
+    scanf("%d",&num);
+    printf("Enter the elements in an array: ");
+    for(i=0; i<num; i++)
+    {
+
+        scanf("%f",&n[i]);
+
+    }
+    printf("The Entered Elements in Array are;\n");
+    //Below 'for' loop gives us the user defined array elements between round braces
+    for(i=0; i<num; i++)
+    {
+        if(i==0)
+            printf("(");
+        printf(" %0.1f, ",n[i]);
+        if(i==num-1)
+            printf(")");
+
+    }
+    printf("\n");
+    printf("solution: The half value pairs of Array elements are;\n");
+    //The below 'for' loop gives us the required half value pairs of Array elements
+    for(i=0; i<num; i++)
+    {   r=fmod(n[i],2.0);
+        if(i==0)
+            printf("{ ");
+        if(r==0)
+        {
+            printf("(%0.1f,%0.1f),",n[i]/2,n[i]/2);
+
+        }
+        if(r==1)
+        {
+            printf("(%0.1f,%0.1f),",n[i]/2,n[i]/2);
+        }
+        if(i==num-1)
+            printf(" }");
+    }
+}
+
+
+
+
+
+
